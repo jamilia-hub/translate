@@ -35,7 +35,7 @@
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html, body { overscroll-behavior-y: contain; }
+html, body { overscroll-behavior-y: contain; overflow-x: hidden; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   background: var(--bg);
@@ -44,8 +44,10 @@ body {
   padding: 16px 12px 80px 12px;
   line-height: 1.5;
   font-size: 15px;
+  width: 100%;
+  max-width: 100vw;
 }
-.container { max-width: 720px; margin: 0 auto; }
+.container { max-width: 720px; margin: 0 auto; width: 100%; }
 
 /* 헤더 */
 .header {
@@ -136,6 +138,8 @@ body {
   border-radius: 12px;
   padding: 8px;
   border: 1px solid var(--border);
+  max-width: 100%;
+  overflow: hidden;
 }
 .cal-weekday {
   text-align: center;
@@ -251,6 +255,8 @@ body {
   border-radius: 8px;
   padding: 10px 12px;
   margin-bottom: 8px;
+  overflow: hidden;
+  max-width: 100%;
 }
 .pub-group.publisher-hak { border-left-color: #b56a9b; background: linear-gradient(to right, var(--hak) 0%, var(--surface) 14%); }
 .pub-group.publisher-seoul { border-left-color: #4a7090; background: linear-gradient(to right, var(--seoul) 0%, var(--surface) 14%); }
@@ -319,6 +325,8 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 12px 14px;
+  overflow: hidden;
+  min-width: 0;
 }
 .stat-label { font-size: 0.8em; color: var(--text2); margin-bottom: 4px; }
 .stat-main { font-size: 1.3em; font-weight: 700; margin-bottom: 2px; }
@@ -364,8 +372,8 @@ body {
   image-rendering: -webkit-optimize-contrast;
 }
 .evo-text { flex: 1; min-width: 0; position: relative; z-index: 2; }
-.evo-stage { font-weight: 700; font-size: 1em; line-height: 1.3; }
-.evo-sub { font-size: 0.78em; color: var(--text2); margin-top: 3px; line-height: 1.3; }
+.evo-stage { font-weight: 700; font-size: 1em; line-height: 1.3; word-break: keep-all; }
+.evo-sub { font-size: 0.78em; color: var(--text2); margin-top: 3px; line-height: 1.3; word-break: keep-all; }
 .evo-count {
   font-size: 1.4em;
   font-weight: 800;
@@ -493,7 +501,7 @@ body {
 .section-header h2 { margin: 0; font-size: 1.05em; }
 
 /* 권 카드 */
-.cards-grid { display: grid; gap: 10px; }
+.cards-grid { display: grid; gap: 10px; width: 100%; max-width: 100%; }
 @media (min-width: 800px) {
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -504,6 +512,8 @@ body {
   border-radius: 10px;
   padding: 14px;
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 .card.publisher-hak { border-left-color: #b56a9b; background: linear-gradient(to right, var(--hak) 0%, var(--surface) 14%); }
 .card.publisher-seoul { border-left-color: #4a7090; background: linear-gradient(to right, var(--seoul) 0%, var(--surface) 14%); }
@@ -563,6 +573,8 @@ body {
   align-items: flex-start;
   gap: 8px;
   margin-bottom: 8px;
+  min-width: 0;
+  width: 100%;
 }
 .card-title-area { flex: 1; min-width: 0; }
 .card-title {
@@ -584,7 +596,7 @@ body {
   flex-shrink: 0;
   font-weight: 700;
 }
-.card-meta { font-size: 0.8em; color: var(--text2); margin-top: 2px; }
+.card-meta { font-size: 0.8em; color: var(--text2); margin-top: 2px; word-break: break-word; }
 
 .card-actions { display: flex; gap: 2px; flex-shrink: 0; align-items: center; }
 
@@ -724,6 +736,8 @@ body {
   border-radius: 10px;
   padding: 14px;
   margin-bottom: 8px;
+  overflow: hidden;
+  max-width: 100%;
 }
 .japan-card .memo {
   background: var(--surface2);
